@@ -1,0 +1,11 @@
+$-- represents a normal user
+sudo su is the command to become root user
+# -- in linux represents root user
+pwd -- present working directory
+/home/ec2-user-- is the home directory
+uname -- it will give kernal name
+so in linux command syntax is <coomand> <options> <inputs>, here options and commands are octionally optional
+
+man --> means manual 
+<coomand name> --help it will give you the information about the command.
+history --> this will give you all the commands used in a session.
