@@ -107,3 +107,17 @@ Output:- https:
 Input:- echo https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe | awk -F / '{print $NF}' --- here we gave $NF so the output is last fragment.
 Output:- Git-2.45.2-64-bit.exe
 
+Onemore use awk command:- for example in excel sheet we will have rows and coloums to enter the values or to separate them, similarly here in passwd file values are separedt with : or / so the values which are present before : in the starting of the line is called user names, we can only user name with the help of awk.
+SO AWK COMMAND IS USED TO DIVIDE THE DATA BASED UPON Colums.
+Input:- cat passwd | awk -F : '{print $1F}'
+Output:- root
+         bin
+         daemon
+         adm
+head <file name> :- it will give you the first ten lines of the file
+tail <file name> :- it will give you the bottom ten lines of the file
+Input:- cat passwd | head -n 3 -- here -n number of lines requested.
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
