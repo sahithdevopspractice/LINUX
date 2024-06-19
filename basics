@@ -9,3 +9,101 @@ so in linux command syntax is <coomand> <options> <inputs>, here options and com
 man --> means manual 
 <coomand name> --help it will give you the information about the command.
 history --> this will give you all the commands used in a session.
+
+ls -- List of subdirectories
+
+By default we will launch at /home/ec2-user home folder.
+
+cd --> change directory
+/ --> root directory
+cd / --> it will take you to the home directory
+
+ls -l --> it means lenghty format in alphabetical order
+ls -lr --> lenghty format i  reverse order from z-a
+ls -lt --> latest file on the top-- t for timing
+ls -ltr --> oldest file is on the top
+ls -la --> List all files and folders including hidden.
+
+drwxr-xr-x  71 root  wheel  2272 May 20 18:30 Library
+d --> directory
+-rw-r--r--    1 sahithreddyguda  staff   2144 Sep 15  2019 week3.R
+- ---> means file
+cd .. --> this will take you one step back
+
+CRUD
+----
+C-- Create, R-- Read, U-- Update, D-- Delate
+
+File creation in Linux:-
+touch --> creates an empty file
+example:- touch <file name>, touch linux basics
+
+Directory creation in linux:- command is mkdir dir stands for directory, syntax is mkdir <directory name>, example mkdir LINUX, it will create a empty directory called LINUX
+
+Update a file with content:- cat > <file name>, a cursor will appears and you can enter the text in the file, press control d to save the file.
+Read a file:- cat <filename>, will display,
+cat > <file name> if you enter the content, in an existed file, it will override the previous content.
+> one greater than symbol will replaces the content
+>> will append the content, means it will add the content to the existed content.
+
+REMOVE FILE and FOLDER/DIRECTORY:-
+rm <file name>
+rmdir <folder-name> --> removes empty directory.
+rm -r <folder-name> --> removes the directory including files. -r stands for recorsive, it means go inside folder and delete everything.
+
+COPY:-
+-------
+cp <source> <destination>
+cp -r --> copy reccursively
+
+CUT:-
+----
+here mv move is used to perform cut operations in linux
+mv <source> <destination>
+mv <file name> <file name-1> example mv linux linux-1, if you are trying to move a file in the same destination, with a different name it will rename the existed file.
+
+SEARCH:-
+cp /etc/paswwd passwd
+synatax:- grep <word-to-find> <file name>, command:- grep bin passwd
+cat >> DevOps passwd
+cat >> devops passwd
+Note:- Linux is case senstive by default, if you enter same word with different format, it will consider as two different words for exampel DevOps and devops 
+grep -i devops passwd, -i it will make case insestive
+grep bin /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+Piping concept in linux:- Pipe one output will be work as pipe two input, pipe two output will work as input to pipe three.
+cat passwd | grep -i devops
+hi learning devops
+|--> one command output will become input to another command.
+
+WGET VS CURL
+------------
+wget:- get from web 
+wget https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe
+wget command is used to download the file
+curl :- downloads the text content directly on to the terminal
+
+CUT and AWK
+these are importnat will use heavly in scripting,
+for example consider the following URL https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe
+Delimeter:- if i choose the delimiter point as : then i will get two delimeters before : and after :. We will get fragments when we do delimeter.
+syntax:- cut -d / -f1
+-d indicates delimeter
+/ delimeter point, these can chnages it might be : . -
+-f1 fragment one
+echo https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe | cut -d / -f1
+https:
+echo https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe | cut -d :  -f2
+//github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe
+cut:- we will use cut command to divide into fragments based upon perticular delimiter, so it is our wish to select which one as a delimet.
+
+Using AWK:- 
+Input:-echo https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe | awk -F / '{print $1F}'
+Output:- https:
+
+Input:- echo https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/Git-2.45.2-64-bit.exe | awk -F / '{print $NF}' --- here we gave $NF so the output is last fragment.
+Output:- Git-2.45.2-64-bit.exe
+
