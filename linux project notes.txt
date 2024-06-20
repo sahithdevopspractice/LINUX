@@ -1,0 +1,22 @@
+http://52.73.200.143/api/catalogue/categories-- quering catalouge to know the product categories
+HTTP Status-
+200 :--> sucess
+3** :- is nothing but redirect
+Fialure responses:- 
+400, 404, 403, 402
+so any error which starts with 4 is client side error.
+5**-- 500 related errors are server side eroors.
+Learn more about http error code.
+Reverse and forward proxy?
+
+MongoDB Configuration:-
+-----------------------
+tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN      1874/mongod
+127.0.0.1 --> this ip address belons to local host nothing but mongodb server, it means it says that will accept the connections only from with in the network, it will not accept any request from out side, so here we have our web app in another server, so inorder to establish the conncetion between web app and mongodb, go to vim /etc/mongod.conf this folder in mongodb and change the ip address 0.0.0.0, it means we are asking mongodb to accept the request from everyone.
+27017 --> 
+netstat -lntp
+tcp        0      0 0.0.0.0:27017           0.0.0.0:*               LISTEN      1973/mongod
+0.0.0.0--> it means it will accept any request from internet.
+
+Catalouge Configuration:-
+tail -f /var/log/messages
