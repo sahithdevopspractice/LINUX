@@ -19,4 +19,9 @@ tcp        0      0 0.0.0.0:27017           0.0.0.0:*               LISTEN      
 0.0.0.0--> it means it will accept any request from internet.
 
 Catalouge Configuration:-
-tail -f /var/log/messages
+tail -f /var/log/messages it will show you the last ten lines in the running logs
+
+to check logs command is less /var/log/messages:- this will show you the entire log files.
+shift+g it will take you to the bottom of the file.
+shift+gg it will take you to the top of the file.
+q to exit
