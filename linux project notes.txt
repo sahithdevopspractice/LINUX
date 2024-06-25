@@ -25,3 +25,5 @@ to check logs command is less /var/log/messages:- this will show you the entire 
 shift+g it will take you to the bottom of the file.
 shift+gg it will take you to the top of the file.
 q to exit
+
+REDIS:- Redis db is a cache, for example if i want to check a user when i login, so user database needs to hit,so hitting a db will take some time like one or two seconds, so when a user logins, and request first it will check in the cache, if the information is not avilable then it will check in the database. so if the information is already exists in the cache it will give a quick response to the user.
